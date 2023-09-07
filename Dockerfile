@@ -1,10 +1,10 @@
-FROM node:16-buster
+FROM node:16-slim
 WORKDIR /app
 
 COPY package*.json ./
 
 ENV NODE_ENV=production
-RUN npm install --production
+RUN npm install --omit=dev
 
 COPY . ./
 
